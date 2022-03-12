@@ -1,0 +1,29 @@
+### Create a new user
+POST http://localhost:80/user
+Content-Type: application/json
+
+{
+    "username": "bacilos52"
+}
+
+### Create a new tweet
+POST http://localhost:80/post
+Content-Type: application/json
+
+{
+    "user_id": 13,
+    "content": "test tweet"
+}
+
+### Follow an account
+POST http://localhost:80/follow
+Content-Type: application/json
+
+{
+    "follower_id": 1,
+    "followed_id": 13
+}
+
+### Get timeline for a specific user
+GET http://localhost:80/timeline/1
+Accept: application/json

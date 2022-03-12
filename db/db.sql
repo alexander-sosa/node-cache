@@ -13,8 +13,8 @@ create table tweets(
 );
 
 create table follows(
-	followed_id tinyint not null,
 	follower_id tinyint not null,
+	followed_id tinyint not null,
 	foreign key (followed_id) references users(user_id),
 	foreign key (follower_id) references users(user_id)
 );

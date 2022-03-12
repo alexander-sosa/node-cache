@@ -1,0 +1,17 @@
+{
+  "name": "node-cache",
+  "version": "1.0.0",
+  "description": "a project to practice basic cache concepts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mysql": "^2.18.1",
+    "node-cache": "^5.1.2"
+  }
+}
