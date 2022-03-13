@@ -8,30 +8,35 @@ var cache = new NodeCache();
 
 // Express server creation
 var app = express();
-app.listen(80, () => {
+app.listen(8080, () => {
     console.log("Twitter server running...");
 })
 
 // Database connection
 var connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'mysql-db',
     user: 'root',
     password: '1234',
     database: 'twitter',
-    port: 3000
-});
-
-connection.connect((error) => {
-    if(error){
-        console.log("an error has ocurred while connecting to database!");
-        throw error;
-    }
-    else{
-        console.log("Connected to database...");
-    }
+    port: 3306
 });
 
 // Endpoints
+app.get("/init", (req, res, next) => {
+    connection.connect((error) => {
+        if(error){
+            console.log("an error has ocurred while connecting to database!");
+            res.status(500);
+            return res.send("an error has ocurred while connecting to database!");
+        }
+        else{
+            console.log("Connected to database...");
+            res.status(200);
+            return res.send("Twitter server ready!");
+        }
+    });    
+});
+
 app.post("/user", jsonParser, (req, res, next) => {
     const username = req.body.username;
     var query = connection.query(

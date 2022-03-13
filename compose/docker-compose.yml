@@ -1,0 +1,27 @@
+version: '3'
+
+networks:
+  ucbnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.20.0.0/16"
+          gateway: "10.20.0.1"
+
+services:
+  mysql-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: '1234'
+      MYSQL_DATABASE: 'twitter'
+    networks:
+      - ucbnet
+
+  twitter-api:
+    image: node-cache:1.0.2
+    ports:
+      - 8080:8080
+    networks:
+      - ucbnet
+
