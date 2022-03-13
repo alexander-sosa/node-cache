@@ -3,7 +3,7 @@ POST http://localhost:80/user
 Content-Type: application/json
 
 {
-    "username": "bacilos52"
+    "username": "rene"
 }
 
 ### Create a new tweet
@@ -11,8 +11,8 @@ POST http://localhost:80/post
 Content-Type: application/json
 
 {
-    "user_id": 13,
-    "content": "test tweet"
+    "user_id": 16,
+    "content": "ojos color sol"
 }
 
 ### Follow an account
@@ -21,9 +21,16 @@ Content-Type: application/json
 
 {
     "follower_id": 1,
-    "followed_id": 13
+    "followed_id": 16
 }
 
 ### Get timeline for a specific user
 GET http://localhost:80/timeline/1
 Accept: application/json
+
+### Compliment for posts update
+GET http://localhost:80/timeline/16
+Accept: application/json
+
+### cache stats
+GET http://localhost:80/cache_stats
