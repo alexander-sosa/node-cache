@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 networks:
   ucbnet:
@@ -19,7 +19,7 @@ services:
       - ucbnet
 
   twitter-api:
-    image: node-cache:1.0.2
+    image: alexandersosa/node-cache:1.0.2
     ports:
       - 8080:8080
     networks:

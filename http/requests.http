@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
     "user_id": 2,
-    "content": "log4j vulnerabilities"
+    "content": "compose-homework"
 }
 
 ### Follow an account
